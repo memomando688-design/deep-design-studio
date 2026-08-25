@@ -154,3 +154,87 @@
     color: var(--color-foreground);
   }
 }
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    font-weight: 600;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+}
+
+@utility text-outline-ink {
+  -webkit-text-stroke: 3px var(--ink);
+  paint-order: stroke fill;
+}
+
+@utility text-outline-cream {
+  -webkit-text-stroke: 3px var(--cream);
+  paint-order: stroke fill;
+}
+
+@keyframes chompo-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes chompo-marquee-reverse {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes chompo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes chompo-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.25;
+  }
+}
+
+@utility marquee-track {
+  display: flex;
+  width: max-content;
+  animation: chompo-marquee 28s linear infinite;
+}
+
+@utility marquee-track-reverse {
+  display: flex;
+  width: max-content;
+  animation: chompo-marquee-reverse 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .marquee-track-reverse {
+    animation: none;
+  }
+}
