@@ -19,6 +19,14 @@
  */
 
 @theme inline {
+  --font-display: "Anton", "Archivo Black", sans-serif;
+  --font-heavy: "Archivo Black", sans-serif;
+  --font-slab: "Baloo 2", system-ui, sans-serif;
+  --font-body: "Barlow Condensed", sans-serif;
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-signal: var(--signal);
+  --color-signal-dark: var(--signal-dark);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -63,20 +71,24 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --cream: oklch(0.968 0.033 96.5);
+  --ink: oklch(0.198 0 0);
+  --signal: oklch(0.552 0.222 27.2);
+  --signal-dark: oklch(0.463 0.191 27.2);
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: var(--cream);
+  --card-foreground: var(--ink);
+  --popover: var(--cream);
+  --popover-foreground: var(--ink);
+  --primary: var(--signal);
+  --primary-foreground: var(--cream);
+  --secondary: var(--ink);
+  --secondary-foreground: var(--cream);
+  --muted: oklch(0.93 0.03 96.5);
+  --muted-foreground: oklch(0.44 0.02 60);
+  --accent: var(--signal);
+  --accent-foreground: var(--cream);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
