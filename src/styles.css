@@ -238,3 +238,28 @@
     animation: none;
   }
 }
+
+@utility bumps-down {
+  background: radial-gradient(circle 18px at 50% 0, currentColor 99%, transparent 100%) 50% 0 /
+    36px 18px repeat-x;
+}
+
+@utility bumps-up {
+  background: radial-gradient(circle 18px at 50% 100%, currentColor 99%, transparent 100%) 50% 100% /
+    36px 18px repeat-x;
+}
+
+@utility ticket-edges {
+  mask:
+    conic-gradient(from 135deg at top, transparent, #000 1deg 89deg, transparent 90deg) 50% 0 / 26px
+      13px repeat-x,
+    conic-gradient(from -45deg at bottom, transparent, #000 1deg 89deg, transparent 90deg) 50% 100% /
+      26px 13px repeat-x,
+    linear-gradient(#000, #000) 0 13px / 100% calc(100% - 26px) no-repeat;
+  -webkit-mask:
+    conic-gradient(from 135deg at top, transparent, #000 1deg 89deg, transparent 90deg) 50% 0 / 26px
+      13px repeat-x,
+    conic-gradient(from -45deg at bottom, transparent, #000 1deg 89deg, transparent 90deg) 50% 100% /
+      26px 13px repeat-x,
+    linear-gradient(#000, #000) 0 13px / 100% calc(100% - 26px) no-repeat;
+}
