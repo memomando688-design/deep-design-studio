@@ -33,8 +33,8 @@ export function About() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="flex flex-col rounded-2xl hairline bg-surface/35 p-6 backdrop-blur-sm">
-              <div className="relative mb-5 overflow-hidden rounded-xl hairline bg-brand/5">
+            <div className="flex flex-col rounded-2xl hairline bg-surface/35 p-5 backdrop-blur-sm">
+              <div className="relative mb-4 overflow-hidden rounded-xl hairline bg-brand/5">
                 <img
                   src={portrait}
                   alt="Portrait of Mostafa Samir, Senior Full Stack Engineer"
