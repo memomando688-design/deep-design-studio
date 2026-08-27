@@ -55,16 +55,16 @@ export function About() {
                 </div>
               </div>
 
-              <div className="mono-label mt-8">Principles</div>
-              <div className="mt-4 grid gap-px overflow-hidden rounded-xl hairline sm:grid-cols-2">
+              <div className="mono-label mt-6">Principles</div>
+              <div className="mt-3 grid gap-px overflow-hidden rounded-xl hairline sm:grid-cols-2">
                 {principles.map((p) => (
-                  <div key={p} className="bg-background/50 px-4 py-4 text-sm">
+                  <div key={p} className="bg-background/50 px-4 py-3 text-sm">
                     {p}
                   </div>
                 ))}
               </div>
 
-              <div className="mt-auto space-y-3 border-t border-border pt-6 text-sm text-muted-foreground">
+              <div className="mt-6 space-y-2 border-t border-border pt-5 text-sm text-muted-foreground">
                 <div className="flex justify-between">
                   <span>Based in</span>
                   <span className="text-foreground">Tanta, Egypt · Remote</span>
