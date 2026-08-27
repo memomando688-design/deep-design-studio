@@ -12,8 +12,8 @@ export function About() {
           title={<>Engineering for trust and scale.</>}
         />
 
-        <div className="grid items-stretch gap-12 lg:grid-cols-[1.25fr_1fr]">
-          <Reveal className="flex h-full flex-col justify-center space-y-5 text-[15px] leading-relaxed text-muted-foreground md:text-base">
+        <div className="grid items-start gap-12 lg:grid-cols-[1.25fr_1fr]">
+          <Reveal className="flex flex-col justify-start space-y-5 text-[15px] leading-relaxed text-muted-foreground md:text-base">
             <p>
               I&apos;m Mostafa Samir, a Senior Full Stack Engineer with 4+ years building
               high-performance microservices and modern web architectures. My focus is systems that
@@ -32,16 +32,16 @@ export function About() {
             </p>
           </Reveal>
 
-          <Reveal delay={0.1} className="h-full">
-            <div className="flex h-full flex-col rounded-2xl hairline bg-surface/35 p-7 backdrop-blur-sm">
-              <div className="relative mb-7 overflow-hidden rounded-xl hairline bg-brand/5">
+          <Reveal delay={0.1}>
+            <div className="flex flex-col rounded-2xl hairline bg-surface/35 p-5 backdrop-blur-sm">
+              <div className="relative mb-4 overflow-hidden rounded-xl hairline bg-brand/5">
                 <img
                   src={portrait}
                   alt="Portrait of Mostafa Samir, Senior Full Stack Engineer"
                   loading="lazy"
                   width={640}
                   height={720}
-                  className="aspect-[4/5] w-full object-cover object-top"
+                  className="h-20 w-full object-cover object-top"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
               </div>
@@ -55,24 +55,18 @@ export function About() {
                 </div>
               </div>
 
-              <div className="mono-label mt-8">Principles</div>
-              <div className="mt-4 grid gap-px overflow-hidden rounded-xl hairline sm:grid-cols-2">
+              <div className="mono-label mt-5">Principles</div>
+              <div className="mt-3 flex flex-wrap gap-2">
                 {principles.map((p) => (
-                  <div key={p} className="bg-background/50 px-4 py-4 text-sm">
+                  <span key={p} className="rounded-lg hairline bg-background/50 px-3 py-1.5 text-sm">
                     {p}
-                  </div>
+                  </span>
                 ))}
               </div>
 
-              <div className="mt-auto space-y-3 border-t border-border pt-6 text-sm text-muted-foreground">
-                <div className="flex justify-between">
-                  <span>Based in</span>
-                  <span className="text-foreground">Tanta, Egypt · Remote</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Engagements</span>
-                  <span className="text-foreground">Full-time · Contract</span>
-                </div>
+              <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-border pt-3 text-sm text-muted-foreground">
+                <span>Based in <span className="text-foreground">Tanta, Egypt · Remote</span></span>
+                <span>Engagements <span className="text-foreground">Full-time · Contract</span></span>
               </div>
             </div>
           </Reveal>
