@@ -12,8 +12,8 @@ export function About() {
           title={<>Engineering for trust and scale.</>}
         />
 
-        <div className="grid items-stretch gap-12 lg:grid-cols-[1.25fr_1fr]">
-          <Reveal className="flex h-full flex-col justify-center space-y-5 text-[15px] leading-relaxed text-muted-foreground md:text-base">
+        <div className="grid items-start gap-12 lg:grid-cols-[1.25fr_1fr]">
+          <Reveal className="flex flex-col justify-start space-y-5 text-[15px] leading-relaxed text-muted-foreground md:text-base">
             <p>
               I&apos;m Mostafa Samir, a Senior Full Stack Engineer with 4+ years building
               high-performance microservices and modern web architectures. My focus is systems that
