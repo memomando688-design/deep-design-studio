@@ -64,15 +64,9 @@ export function About() {
                 ))}
               </div>
 
-              <div className="mt-5 space-y-2 border-t border-border pt-4 text-sm text-muted-foreground">
-                <div className="flex justify-between">
-                  <span>Based in</span>
-                  <span className="text-foreground">Tanta, Egypt · Remote</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Engagements</span>
-                  <span className="text-foreground">Full-time · Contract</span>
-                </div>
+              <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-border pt-3 text-sm text-muted-foreground">
+                <span>Based in <span className="text-foreground">Tanta, Egypt · Remote</span></span>
+                <span>Engagements <span className="text-foreground">Full-time · Contract</span></span>
               </div>
             </div>
           </Reveal>
