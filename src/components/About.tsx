@@ -32,9 +32,9 @@ export function About() {
             </p>
           </Reveal>
 
-          <Reveal delay={0.1} className="h-full">
-            <div className="flex h-full flex-col rounded-2xl hairline bg-surface/35 p-7 backdrop-blur-sm">
-              <div className="relative mb-7 overflow-hidden rounded-xl hairline bg-brand/5">
+          <Reveal delay={0.1}>
+            <div className="flex flex-col rounded-2xl hairline bg-surface/35 p-6 backdrop-blur-sm">
+              <div className="relative mb-5 overflow-hidden rounded-xl hairline bg-brand/5">
                 <img
                   src={portrait}
                   alt="Portrait of Mostafa Samir, Senior Full Stack Engineer"
