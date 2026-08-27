@@ -41,7 +41,7 @@ export function About() {
                   loading="lazy"
                   width={640}
                   height={720}
-                  className="aspect-[5/4] w-full object-cover object-top"
+                  className="h-44 w-full object-cover object-top"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
               </div>
