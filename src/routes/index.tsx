@@ -167,25 +167,36 @@ function Home() {
               <p className="text-sm font-semibold text-foreground">
                 {pick("أقرب فنيين متاحين دلوقتي", "Mechanics available right now")}
               </p>
-              <div className="mt-4 space-y-3">
-                {demoProviders.slice(0, 3).map((p) => (
-                  <div
-                    key={p.id}
-                    className="flex items-center justify-between gap-3 rounded-xl bg-surface p-4"
-                  >
-                    <div className="min-w-0">
-                      <p className="truncate font-medium text-foreground">
-                        {lang === "ar" ? p.name : p.nameEn}
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        {p.distanceKm} km · {p.responseMinutes} min
-                      </p>
+                <div className="mt-4 space-y-3">
+                  {demoProviders.slice(0, 3).map((p, i) => (
+                    <div
+                      key={p.id}
+                      className="flex items-center justify-between gap-3 rounded-xl bg-surface p-4"
+                    >
+                      <div className="flex min-w-0 items-center gap-3">
+                        <img
+                          src={mechanicPhotos[i % mechanicPhotos.length]}
+                          width={512}
+                          height={512}
+                          loading="lazy"
+                          alt={lang === "ar" ? p.name : p.nameEn}
+                          className="h-10 w-10 shrink-0 rounded-full object-cover"
+                        />
+                        <div className="min-w-0">
+                          <p className="truncate font-medium text-foreground">
+                            {lang === "ar" ? p.name : p.nameEn}
+                          </p>
+                          <p className="text-xs text-muted-foreground">
+                            {p.distanceKm} km · {p.responseMinutes} min
+                          </p>
+                        </div>
+                      </div>
+                      <span className="flex shrink-0 items-center gap-1 text-sm font-semibold text-foreground">
+                        <Star className="h-4 w-4 text-warning" aria-hidden /> {p.rating}
+                      </span>
                     </div>
-                    <span className="flex shrink-0 items-center gap-1 text-sm font-semibold text-foreground">
-                      <Star className="h-4 w-4 text-warning" aria-hidden /> {p.rating}
-                    </span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
