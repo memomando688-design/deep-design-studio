@@ -8,6 +8,19 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import heroMechanic from "@/assets/hero-mechanic.jpg";
+import serviceMobile from "@/assets/service-mobile.jpg";
+import serviceWorkshop from "@/assets/service-workshop.jpg";
+import servicePickup from "@/assets/service-pickup.jpg";
+import ctaRide from "@/assets/cta-ride.jpg";
+import mechanic1 from "@/assets/mechanic-1.jpg";
+import mechanic2 from "@/assets/mechanic-2.jpg";
+import mechanic3 from "@/assets/mechanic-3.jpg";
+import mechanic4 from "@/assets/mechanic-4.jpg";
+import mechanic5 from "@/assets/mechanic-5.jpg";
+import mechanic6 from "@/assets/mechanic-6.jpg";
+
+const mechanicPhotos = [mechanic1, mechanic2, mechanic3, mechanic4, mechanic5, mechanic6];
 import {
   Accordion,
   AccordionContent,
@@ -40,6 +53,7 @@ function Home() {
   const services = [
     {
       icon: Wrench,
+      image: serviceMobile,
       title: pick("صيانة متنقلة", "Mobile service"),
       body: pick(
         "الفني يجيلك في مكانك ويصلّح العجلة قدامك.",
@@ -48,6 +62,7 @@ function Home() {
     },
     {
       icon: Bike,
+      image: serviceWorkshop,
       title: pick("صيانة في الورشة", "Workshop service"),
       body: pick(
         "ورش معتمدة للأعطال الكبيرة والصيانة الشاملة.",
@@ -56,6 +71,7 @@ function Home() {
     },
     {
       icon: MapPin,
+      image: servicePickup,
       title: pick("استلام وتسليم", "Pickup & return"),
       body: pick(
         "نستلم العجلة من بيتك ونرجعها جاهزة للركوب.",
@@ -136,7 +152,18 @@ function Home() {
               </dl>
             </div>
 
-            <div className="rounded-2xl border border-border bg-surface-muted p-6">
+            <div className="space-y-5">
+              <img
+                src={heroMechanic}
+                width={1408}
+                height={1056}
+                alt={pick(
+                  "فني عجل بيصلّح عجلة في الشارع",
+                  "A bike mechanic repairing a bicycle wheel on the street",
+                )}
+                className="aspect-[4/3] w-full rounded-2xl border border-border object-cover shadow-sm"
+              />
+              <div className="rounded-2xl border border-border bg-surface-muted p-6">
               <p className="text-sm font-semibold text-foreground">
                 {pick("أقرب فنيين متاحين دلوقتي", "Mechanics available right now")}
               </p>
@@ -168,7 +195,15 @@ function Home() {
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{t("services")}</h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => (
-              <Card key={s.title} className="h-full">
+              <Card key={s.title} className="h-full overflow-hidden pt-0">
+                <img
+                  src={s.image}
+                  width={1024}
+                  height={768}
+                  loading="lazy"
+                  alt={s.title}
+                  className="aspect-[4/3] w-full object-cover"
+                />
                 <CardContent className="flex h-full flex-col gap-3 p-6">
                   <s.icon className="h-8 w-8 text-primary" aria-hidden />
                   <h3 className="text-lg font-semibold text-foreground">{s.title}</h3>
@@ -201,13 +236,23 @@ function Home() {
             {mechanics.length} {t("providersFound")}
           </p>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {mechanics.map((p) => (
+            {mechanics.map((p, i) => (
               <Card key={p.id} className="h-full">
                 <CardContent className="flex h-full flex-col gap-3 p-6">
                   <div className="flex items-start justify-between gap-3">
-                    <h3 className="font-semibold text-foreground">
-                      {lang === "ar" ? p.name : p.nameEn}
-                    </h3>
+                    <div className="flex min-w-0 items-center gap-3">
+                      <img
+                        src={mechanicPhotos[i % mechanicPhotos.length]}
+                        width={512}
+                        height={512}
+                        loading="lazy"
+                        alt={lang === "ar" ? p.name : p.nameEn}
+                        className="h-12 w-12 shrink-0 rounded-full border border-border object-cover"
+                      />
+                      <h3 className="truncate font-semibold text-foreground">
+                        {lang === "ar" ? p.name : p.nameEn}
+                      </h3>
+                    </div>
                     {p.verified && (
                       <ShieldCheck className="h-5 w-5 shrink-0 text-success" aria-hidden />
                     )}
@@ -236,6 +281,32 @@ function Home() {
             ))}
           </div>
         </section>
+
+        <section className="mx-auto max-w-6xl px-4 pb-14 sm:pb-20">
+          <div className="relative overflow-hidden rounded-2xl border border-border">
+            <img
+              src={ctaRide}
+              width={1408}
+              height={704}
+              loading="lazy"
+              alt={pick(
+                "راكب عجلة في شارع المدينة وقت الغروب",
+                "A cyclist riding through a city street at golden hour",
+              )}
+              className="h-64 w-full object-cover sm:h-80"
+            />
+            <div className="absolute inset-0 bg-foreground/55" />
+            <div className="absolute inset-0 flex flex-col items-start justify-center gap-4 p-6 sm:p-10">
+              <h2 className="max-w-lg text-2xl font-bold text-background sm:text-4xl">
+                {pick("عجلتك جاهزة للركوب في نفس اليوم", "Your bike, ride-ready the same day")}
+              </h2>
+              <Button size="lg" asChild>
+                <a href="#mechanics">{t("fixMyBike")}</a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
 
         <section id="faq" className="scroll-mt-20 border-t border-border bg-surface">
           <div className="mx-auto max-w-3xl px-4 py-14 sm:py-20">
